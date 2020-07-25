@@ -47,7 +47,7 @@ def Homepage():
     f"/api/v1.0/startdate<br/>" 
     f"------------------------------------------------------------------------------------------<br/>"
     f"List of the minimum, average and max temperature for a given start-end range<br/>"
-    f"/api/v1.0/enddate"
+    f"/api/v1.0/startdate/endddate"
     ) 
 
 @app.route("/api/v1.0/precipitation")
@@ -123,13 +123,12 @@ def tobs():
     return jsonify(tobs_list)
 
 @app.route("/api/v1.0/startdate")
-def start():
+def start(start_date):
     # Create our session (link) from Python to the DB
     session = Session(engine)
     
     # Query   
-    start_date = '2016-06-28'
-    
+      
     tobs_start_results = session.query(Measurement.date, func.min(Measurement.tobs), func.avg(Measurement.tobs), 
        func.max(Measurement.tobs)).\
       filter(Measurement.date >= start_date).all()
@@ -149,14 +148,13 @@ def start():
 
     return jsonify(tobs_s_list)
 
-@app.route("/api/v1.0/enddate")
-def enddate():
+@app.route("/api/v1.0/<startdate>/<enddate>")
+def enddate(start_date, end_date):
     # Create our session (link) from Python to the DB
     session = Session(engine)
     
     #query
-    start_date = '2016-06-28'
-    end_date = '2016-07-05'
+  
     tobs_end_results = session.query(Measurement.date, func.min(Measurement.tobs), func.avg(Measurement.tobs), 
         func.max(Measurement.tobs)).\
        filter(Measurement.date >= start_date).\
