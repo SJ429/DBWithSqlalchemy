@@ -1,6 +1,6 @@
 
 
-# SQLAlchemy Hawaii Vacation SQLAlchemy 
+# SQLAlchemy Hawaii Vacation  
 
 Python and SQLAlchemy ORM queries with provided hawaii.s qlite were used to reflect tables into a new model and perform analysis of Hawaii climate. 
 A Flask API app was used to create routes that retrieve JSON data such as precipitation values by date, stations, temperature observations from the last year, and min, max, and average temperatures within a specified date range.
