@@ -11,7 +11,7 @@ Additionally, to perform the analyse of Hawaii climate dataset,  these were done
   2. Queries were used to retrieve the last 12 months of precipitation data and plotting them over time using a pandas DataFrame
   3. Queries were designed to obtain the total number of stations, the most active stations, and the last 12 months of temperature observation data (summarized as a histogram)
 
-![](Images/Daily%20Normals.png)  ![](Images/Trip%20Avg%20Temp.png)
+![](Images/Trip%20Avg%20Temp.png)
 
 ![](Images/precipitation.png)
 
